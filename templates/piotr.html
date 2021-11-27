@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %} 
+    <h1> Stats </h1>
+    {% for item in values %}
+        <p>Navn: {{item.name}}, Liten Øl (0.33L): {{item.olSmall}},Stor ØL (0.5L): {{item.olLarge}}, Vin: {{item.vin}}, Shot: {{item.shot}}</p>
+    {% endfor %}
+
+
+{% endblock %}

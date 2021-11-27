@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %} User {% endblock %}
+
+{% block content %} 
+
+<h2> Hei {{usr}}!!</h2>
+
+<!--<form action="#" method = "POST">
+    <input type="olSmall" name="olSmall" placeholder="Enter nr. of 0.33L beers" value="{{olSmall if olSmall}}"/>
+    <input type="submit" value="Legg Til"/>
+</form>-->
+<h3>Hva du har drukket så langt!!</h3><br>
+<form action="/user" method = "POST">
+
+<ul style="list-style-type: none;">
+    <li>Liten Øl : {{olSmall}}
+    <button type="submit" name="olSmall" value="olSmall">+1 0.33 Øl</button> 
+    <button type="submit" name="-olSmall" value="-olSmall">-1 0.33 Øl</button>  </li><br>
+    <li>Stor Øl : {{olLarge}} 
+    <button type="submit" name="olLarge" value="olLarge">+1 0.5 Øl</button> 
+    <button type="submit" name="-olLarge" value="-olLarge">-1 0.5 Øl</button> </li><br>
+    <li>Vin : {{vin}} 
+    <button type="submit" name="vin" value="vin">+1 Vin</button>
+    <button type="submit" name="-vin" value="-vin">-1 Vin</button></li><br>
+    <li>Shot : {{shot}} 
+    <button type="submit" name="shot" value="shot">+1 shot</button>
+    <button type="submit" name="-shot" value="-shot">-1 shot</button></li>
+</ul>
+
+
+</form>
+{% endblock %}
