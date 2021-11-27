@@ -1,1 +1,1 @@
-weg: guinicorn app:main
+web: gunicorn app:main
