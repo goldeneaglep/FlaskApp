@@ -8,9 +8,7 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 app.secret_key = "nokkel"
 
-ipOfDB = '80.213.239.129'
-
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///'+ipOfDB+'users.sqlite3'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.sqlite3'
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 app.permanent_session_lifetime = timedelta(days=31)
