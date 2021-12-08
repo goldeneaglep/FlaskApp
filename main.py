@@ -8,7 +8,9 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 app.secret_key = "nokkel"
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.sqlite3'
+ipOfDB = '80.213.239.129'
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///'+ipOfDB+'users.sqlite3'
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 app.permanent_session_lifetime = timedelta(days=31)
@@ -150,5 +152,5 @@ def stats():
 
 if __name__ == "__main__":
     db.create_all()
-    app.run(debug=True)
+    app.run(debug=True,host="0.0.0.0")
 
